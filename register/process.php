@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $_SESSION['name'] = $name;
         $_SESSION['regdate'] = date('Y-m-d H:i:s');
         $_SESSION['last_login'] = date('Y-m-d H:i:s');
-        header("Location: /home");
+        header("Location: /");
         exit;
     } else {
         header('Location: index.php?error=db');

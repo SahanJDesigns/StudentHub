@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['regdate'] = $created_at;
             $_SESSION['last_login'] = date('Y-m-d H:i:s');
 
-            header('Location: /home');
+            header('Location: /');
             exit;
         } else {
             header('Location: /login?error=invalid password');

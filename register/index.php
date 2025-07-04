@@ -28,7 +28,7 @@
             <i class="fas fa-user"></i> Full Name
           </label>
           <input type="text" id="name" name="name" placeholder="Enter your full name" required />
-          <small class="error" id="nameError"></small>
+          <small class="error show" id="nameError"></small>
         </div>
         
         <div class="form-group">
@@ -36,7 +36,7 @@
             <i class="fas fa-envelope"></i> Email Address
           </label>
           <input type="email" id="email" name="email" placeholder="Enter your email address" required />
-          <small class="error" id="emailError"></small>
+          <small class="error show" id="emailError"></small>
         </div>
         
         <div class="form-group">
@@ -45,10 +45,12 @@
             </label>
             <div class="password-container">
           <input type="password" id="password" name="password" placeholder="Create a password" required />
+          
           <span id="togglePassword" class="toggle-password">
               <i class="fas fa-eye"></i>
           </span>
             </div>
+            <small class="error show" id="passwordError"></small>
         </div>
 
            
@@ -62,7 +64,7 @@
               <i class="fas fa-eye"></i>
           </span>
             </div>
-            <small class="error" id="confirmPasswordError"></small>
+            <small class="error show" id="confirmPasswordError"></small>
         </div>
         
         <button type="submit" class="submit-btn">Create Account</button>

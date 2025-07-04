@@ -12,7 +12,7 @@
 </head>
 <body>
     <!-- Navigation Bar -->
-    <?php include './../components/navigationbar.php'; ?>
+    <?php include './components/navigationbar.php'; ?>
     <div class="container">
         <!-- Hero Section -->
         <section class="hero">

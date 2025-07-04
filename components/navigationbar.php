@@ -2,9 +2,13 @@
 $isAuthenticated = isset($_SESSION['user']); 
 $currentPath = $_SERVER['REQUEST_URI']; 
 function isActive($path) {     
-    global $currentPath;     
-    return strpos($currentPath, $path) !== false ? 'active-link' : 'nav-link'; 
-} 
+    global $currentPath; 
+    if ($path !== '/') { 
+           return strpos($currentPath, $path) !== false ? 'active-link' : 'nav-link'; 
+    } else { 
+        return $currentPath === '/' ? 'active-link' : 'nav-link';  
+    } 
+}
 ?>
 
 <!-- Font Awesome CDN for icons -->
@@ -236,7 +240,7 @@ function isActive($path) {
 </style>
 
 <nav>
-    <a href="/home" class="nav-brand">
+    <a href="/" class="nav-brand">
         <i class="fas fa-rocket"></i>
         StudentHub
     </a>
@@ -247,7 +251,7 @@ function isActive($path) {
 
     <div class="nav-links" id="navLinks">
         <div class="nav-left">
-            <a href="/home" class="<?php echo isActive('/home'); ?>">
+            <a href="/" class="<?php echo isActive('/'); ?>">
                 <i class="fas fa-home"></i> Home
             </a>
             <?php if ($isAuthenticated): ?>

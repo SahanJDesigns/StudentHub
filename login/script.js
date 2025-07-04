@@ -24,7 +24,7 @@
     const emailError = document.getElementById('emailError');
     const passwordError = document.getElementById('passwordError');
 
-    // Clear previous errors
+    // Clear previous erroryyys
     emailError.classList.remove('show');
     passwordError.classList.remove('show');
 
@@ -58,11 +58,11 @@
       submitBtn.disabled = true;
       submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Signing In...';
 
-      // Simulate form submission (remove this in production)
+     
       setTimeout(() => {
-        // In production, remove this setTimeout and let the form submit normally
         this.submit();
       }, 1500);
+      
     }
   });
 

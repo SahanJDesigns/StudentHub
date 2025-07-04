@@ -17,6 +17,7 @@
 
   // Registration form validation
   document.getElementById('registerForm').addEventListener('submit', function(e) {
+    e.preventDefault();
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value;
@@ -36,35 +37,51 @@
     // Name validation
     if (!name) {
       if (nameError) nameError.textContent = 'Full name is required';
+      nameError.classList.add('show');
       isValid = false;
     }
     // Email validation
     if (!email) {
       if (emailError) emailError.textContent = 'Email is required';
+      emailError.classList.add('show');
       isValid = false;
     } else if (!/\S+@\S+\.\S+/.test(email)) {
       if (emailError) emailError.textContent = 'Please enter a valid email address';
+      emailError.classList.add('show');
       isValid = false;
     }
     // Password validation
     if (!password) {
       if (passwordError) passwordError.textContent = 'Password is required';
+      passwordError.classList.add('show');
       isValid = false;
     } else if (password.length < 6) {
       if (passwordError) passwordError.textContent = 'Password must be at least 6 characters';
+      passwordError.classList.add('show');
       isValid = false;
     }
     // Confirm password validation
     if (!confirmPassword) {
       if (confirmPasswordError) confirmPasswordError.textContent = 'Please confirm your password';
+      confirmPasswordError.classList.add('show');
       isValid = false;
     } else if (password !== confirmPassword) {
       if (confirmPasswordError) confirmPasswordError.textContent = 'Passwords do not match';
+      confirmPasswordError.classList.add('show');
       isValid = false;
     }
-    if (!isValid) {
-      e.preventDefault();
-      return;
+    if (isValid) {
+      // Show loading state
+      const submitBtn = document.querySelector('.submit-btn');
+      submitBtn.classList.add('loading');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Registering...';
+
+      // Simulate form submission (remove this in production)
+      setTimeout(() => {
+        this.submit();
+      }, 1500);
+            submitBtn.classList.remove('loading');
     }
   });
 
